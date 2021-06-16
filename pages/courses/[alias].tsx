@@ -1,5 +1,5 @@
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
-import { withLayout } from "../../layout/Layout";
+import { withLayout } from "../../layout/Menu";
 import axios from "axios";
 import { MenuItem } from "../../interfaces/menu.interface";
 import { TopPageModel } from "../../interfaces/page.interface";
@@ -24,7 +24,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 	);
 
 	return {
-		paths: menu.flatMap(m => m.pages.map(p => "/courses/" + p.alias)),
+		paths: menu.flatMap((m) => m.pages.map((p) => "/courses/" + p.alias)),
 		fallback: true,
 	};
 };
