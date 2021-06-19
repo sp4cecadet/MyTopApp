@@ -1,0 +1,31 @@
+.search {
+	position: relative;
+	width: 100%;
+}
+
+.input {
+	width: 100%;
+	color: var(--gray);
+}
+
+.button {
+	position: absolute;
+	top: 3px;
+	right: 3px;
+	width: 30px;
+	height: 30px;
+}
+
+/* no comment */
+.button svg {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 30px;
+	height: 30px;
+}
+
+.button svg:hover rect {
+	fill: var(--primary-hover);
+}
+/* no comment */

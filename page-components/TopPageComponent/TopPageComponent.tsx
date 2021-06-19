@@ -1,5 +1,5 @@
 import { TopPageComponentProps } from "./TopPageComponent.props";
-import { HTag, Tag, HhData, Advantages, Sort } from "../../components";
+import { HTag, Tag, HhData, Advantages, Sort, Product } from "../../components";
 import styles from "./TopPageComponent.module.css";
 import { TopLevelCategory } from "../../interfaces/page.interface";
 import { SortEnum } from "../../components/Sort/Sort.props";
@@ -13,7 +13,7 @@ export const TopPageComponent = ({
 }: TopPageComponentProps): JSX.Element => {
 	const [{ products: sortedProducts, sort }, dispatchSort] = useReducer(
 		sortReducer,
-		{ products, sort: SortEnum.Rating }
+		{ products, sort: SortEnum.Rating },
 	);
 
 	const setSort = (sort: SortEnum) => {
@@ -33,7 +33,9 @@ export const TopPageComponent = ({
 			</div>
 			<div>
 				{sortedProducts &&
-					sortedProducts.map((p) => <div key={p._id}>{p.title}</div>)}
+					sortedProducts.map((p) => (
+						<Product key={p._id} product={p} />
+					))}
 			</div>
 			<div className={styles.hhTitle}>
 				<HTag tag="h2">Вакансии {page.category}</HTag>

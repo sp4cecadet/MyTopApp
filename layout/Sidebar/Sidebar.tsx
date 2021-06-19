@@ -4,17 +4,18 @@ import cn from "classnames";
 import { Menu } from "../Menu/Menu";
 import Logo from "../logo.svg";
 import Link from "next/link";
+import { Search } from "../../components";
 
 export const Sidebar = ({ className, ...props }: SidebarProps): JSX.Element => {
-	return (
-		<div className={cn(className, styles.sidebar)} {...props}>
-			<Link href={"/"}>
-				<a>
-					<Logo className={styles.logo} />
-				</a>
-			</Link>
-			<div>Search</div>
-			<Menu />
-		</div>
-	);
+  return (
+    <div className={cn(className, styles.sidebar)} {...props}>
+      <Link href={"/"}>
+        <a>
+          <Logo className={styles.logo} />
+        </a>
+      </Link>
+      <Search />
+      <Menu />
+    </div>
+  );
 };
