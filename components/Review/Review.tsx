@@ -16,8 +16,8 @@ export const Review = ({
 		<div className={cn(styles.review, className)} {...props}>
 			<UserIcon className={styles.user} />
 			<div className={styles.title}>
-				<span className={styles.name}>{name}:</span>&nbsp;&nbsp;
-				<span>{title}</span>
+				<span className={styles.name}>{name}:</span>&nbsp;&nbsp; title
+				&& <span>{title}</span>
 			</div>
 			<div className={styles.date}>
 				{format(new Date(createdAt), "dd MMMM yyyy", { locale: ru })}

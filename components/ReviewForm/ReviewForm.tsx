@@ -62,10 +62,10 @@ export const ReviewForm = ({
 						required: { value: true, message: "Укажите заголовок" },
 					})}
 					placeholder="Заголовок отзыва"
-					error={errors.title}
+					error={errors?.title}
 					className={styles.title}
 					tabIndex={isOpened ? 0 : -1}
-					aria-invalid={errors.title ? true : false}
+					aria-invalid={errors?.title ? true : false}
 				/>
 				<div className={styles.rating}>
 					<span>Оценка:</span>
