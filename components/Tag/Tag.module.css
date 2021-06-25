@@ -27,14 +27,14 @@
 
 .red {
 	color: var(--white);
-	background-color: #DE0000;
+	background-color: #de0000;
 
 	font-weight: bold;
 }
 
 .gray {
 	color: var(--white);
-	background-color: #B3C0D9;
+	background-color: #8a99b7;
 
 	font-weight: bold;
 }

@@ -4,10 +4,12 @@
 	transition: all 0.2s;
 }
 
+.star {
+	display: inline-block;
+}
+
 .star svg {
 	margin-right: 5px;
-
-	outline: none;
 }
 
 .editable {

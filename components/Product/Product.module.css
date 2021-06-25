@@ -120,7 +120,7 @@
 }
 
 .advantages {
-	border-left: 3px solid var(--green);
+	border-left: 3px solid #1dc37e;
 	padding-left: 15px;
 	margin-bottom: 20px;
 }

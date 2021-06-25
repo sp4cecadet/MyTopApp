@@ -5,7 +5,7 @@ import { TopLevelCategory } from "../../interfaces/page.interface";
 import { SortEnum } from "../../components/Sort/Sort.props";
 import { useEffect, useReducer } from "react";
 import { sortReducer } from "./sort.reducer";
-import { useScrollY } from "../../hooks/useScrollY";
+import { useReducedMotion } from "framer-motion";
 
 export const TopPageComponent = ({
 	page,
@@ -17,7 +17,7 @@ export const TopPageComponent = ({
 		{ products, sort: SortEnum.Rating },
 	);
 
-	const y = useScrollY();
+	const shouldReduceMotion = useReducedMotion();
 
 	useEffect(() => {
 		dispatchSort({ type: "reset", initState: products });
@@ -32,16 +32,24 @@ export const TopPageComponent = ({
 			<div className={styles.title}>
 				<HTag tag="h1">{page.title}</HTag>
 				{products && (
-					<Tag color="gray" size="m">
+					<Tag
+						color="gray"
+						size="m"
+						aria-label={products.length + "элементов"}>
 						{products.length}
 					</Tag>
 				)}
 				<Sort sort={sort} setSort={setSort} />
 			</div>
-			<div>
+			<div role="list">
 				{sortedProducts &&
 					sortedProducts.map((p) => (
-						<Product layout key={p._id} product={p} />
+						<Product
+							layout={shouldReduceMotion ? false : true}
+							key={p._id}
+							product={p}
+							role="listitem"
+						/>
 					))}
 			</div>
 			<div className={styles.hhTitle}>
@@ -55,7 +63,7 @@ export const TopPageComponent = ({
 			{firstCategory === TopLevelCategory.Courses && page.hh && (
 				<HhData {...page.hh} />
 			)}
-			{page.advantages && page.advantages[0] && page.advantages[0].title && (
+			{page.advantages && page.advantages.length > 0 && (
 				<>
 					<HTag tag="h2">Преимущества</HTag>
 					<Advantages advantages={page.advantages} />
