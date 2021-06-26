@@ -12,6 +12,7 @@ import "react-app-polyfill/stable"; // I've spent 2 hours of my life to find a s
 import { firstLevelMenu } from "../../helpers/helpers";
 import { TopPageComponent } from "../../page-components";
 import { API } from "../../helpers/api";
+import Head from "next/head";
 
 function TopPage({
 	firstCategory,
@@ -20,11 +21,23 @@ function TopPage({
 	products,
 }: TopPageProps): JSX.Element {
 	return (
-		<TopPageComponent
-			firstCategory={firstCategory}
-			page={page}
-			products={products}
-		/>
+		<>
+			<Head>
+				<title>{page.title}</title>
+				<meta name="description" content={page.metaDescription} />
+				<meta property="og:title" content={page.metaTitle} />
+				<meta
+					property="og:description"
+					content={page.metaDescription}
+				/>
+				<meta property="og:type" content="article" />
+			</Head>
+			<TopPageComponent
+				firstCategory={firstCategory}
+				page={page}
+				products={products}
+			/>
+		</>
 	);
 }
 
