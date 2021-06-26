@@ -28,7 +28,7 @@ const Layout = ({ children }: LayoutProps): JSX.Element => {
 			<a
 				onFocus={() => setSLIsDisplayed(true)}
 				onKeyDown={skipContentAction}
-				tabIndex={1}
+				tabIndex={0}
 				className={cn(styles.skipLink, {
 					[styles.displayed]: slIsDisplayed,
 				})}>
