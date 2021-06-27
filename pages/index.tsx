@@ -13,33 +13,14 @@ import { withLayout } from "../layout/Layout";
 import axios from "axios";
 import { MenuItem } from "../interfaces/menu.interface";
 import { API } from "../helpers/api";
-import { Error500 } from "./500";
+import { IndexPageComponent } from "../page-components/IndexPageComponent/IndexPageComponent";
 
 function Home({ menu }: HomeProps): JSX.Element {
 	const [rating, setRating] = useState<number>(0);
 
 	return (
 		<>
-			<HTag tag="h1">Hello</HTag>
-			<Button appearance="primary" arrow="right">
-				Button
-			</Button>
-			<Button appearance="ghost" arrow="down">
-				Button
-			</Button>
-			<Paragraph>Hello</Paragraph>
-			<Tag color="red" href="#">
-				Hmmm
-			</Tag>
-			<Tag color="green" href="#">
-				Hmmm
-			</Tag>
-			<Tag color="gray" href="#">
-				Hmmm
-			</Tag>
-			<Rating rating={rating} isEditable={true} setRating={setRating} />
-			<Input placeholder="Hafanana" />
-			<Textarea placeholder="Lula-la-la" />
+			<IndexPageComponent />
 		</>
 	);
 }
