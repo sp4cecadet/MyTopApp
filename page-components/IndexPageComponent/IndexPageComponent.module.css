@@ -1,5 +1,4 @@
 .icon {
-
 	display: flex;
 	align-items: center;
 
@@ -41,7 +40,6 @@
 }
 
 .courseBlock {
-
 	display: grid;
 	align-content: start;
 
