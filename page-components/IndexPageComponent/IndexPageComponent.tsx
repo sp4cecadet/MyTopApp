@@ -37,7 +37,13 @@ export const IndexPageComponent = (): JSX.Element => {
 						`/${route}/${p.alias}/` === router.asPath
 							? "page"
 							: false
-					}>
+					}
+					onKeyDown={(key: React.KeyboardEvent) => {
+						if (key.code === "Space") {
+							key.preventDefault();
+							router.push(`/${route}/${p.alias}/`);
+						}
+					}}>
 					{p.category}
 				</a>
 			</Link>
