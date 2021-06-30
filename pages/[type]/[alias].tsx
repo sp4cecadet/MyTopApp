@@ -42,7 +42,6 @@ function TopPage({
 				page={page}
 				products={products}
 			/>
-			)
 		</>
 	);
 }

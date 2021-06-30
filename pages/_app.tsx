@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
 		<>
 			<Head>
 				<title>OWL Top</title>
-				<link rel="icon" href="/favicon.ico" />
+				<link rel="icon" href="/favicon.svg" />
 				<link rel="preconnect" href="https://fonts.gstatic.com" />
 				<link rel="preconnect" href="https://mc.yandex.ru" />
 				<link
