@@ -1,32 +1,3 @@
-.firstLevel {
-	display: grid;
-
-	align-items: center;
-
-	margin-top: 20px;
-
-	font-size: 18px;
-	line-height: 25px;
-	grid-template-columns: 24px 1fr;
-	gap: 20px 20px;
-}
-
-.firstLevelList {
-	padding: 0;
-
-	list-style: none;
-}
-
-.firstLevelActive,
-.firstLevel:hover {
-	color: var(--primary);
-}
-
-.firstLevelActive svg,
-.firstLevel:hover svg {
-	fill: var(--primary);
-}
-
 .secondLevel {
 	margin-bottom: 10px;
 
@@ -46,8 +17,6 @@
 }
 
 .secondBlock {
-	margin-top: 15px;
-	margin-left: 12px;
 	padding: 0;
 	padding-left: 16px;
 

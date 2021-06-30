@@ -59,19 +59,8 @@ export const Menu = (): JSX.Element => {
 	};
 
 	const buildFirstLevel = () => {
-		return (
-			<ul className={styles.firstLevelList}>
-				{firstLevelMenu.map(
-					(m) =>
-						m.name === "Курсы" && (
-							<li
-								key={m.route}
-								aria-expanded={m.id === firstCategory}>
-								{m.id === firstCategory && buildSecondLevel(m)}
-							</li>
-						),
-				)}
-			</ul>
+		return firstLevelMenu.map(
+			(m) => m.name === "Курсы" && buildSecondLevel(m),
 		);
 	};
 
