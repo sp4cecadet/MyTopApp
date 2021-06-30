@@ -38,15 +38,32 @@ export const Menu = (): JSX.Element => {
 		hidden: { opacity: shouldReduceMotion ? 1 : 0, height: 0 },
 	};
 
+	const openSecondLevel = (secondCategory: string) => {
+		setMenu &&
+			setMenu(
+				menu.map((m) => {
+					if (m._id.secondCategory === secondCategory) {
+						setAnnounce(m.isOpened ? "closed" : "opened");
+						m.isOpened = !m.isOpened;
+					}
+					return m;
+				}),
+			);
+	};
+
 	const openSecondLevelKey = (key: KeyboardEvent, secondCategory: string) => {
 		if (key.code === "Space" || key.code === "Enter") {
 			key.preventDefault();
+			openSecondLevel(secondCategory);
 		}
 	};
 
 	const buildFirstLevel = () => {
-		firstLevelMenu.map(
-			(m) => m.id === firstCategory && buildSecondLevel(m),
+		return firstLevelMenu.map(
+			(m) =>
+				m.name === "Курсы" &&
+				m.id === firstCategory &&
+				buildSecondLevel(m),
 		);
 	};
 
@@ -71,6 +88,9 @@ export const Menu = (): JSX.Element => {
 										key,
 										m._id.secondCategory,
 									)
+								}
+								onClick={() =>
+									openSecondLevel(m._id.secondCategory)
 								}
 								className={styles.secondLevel}
 								aria-expanded={m.isOpened}>
